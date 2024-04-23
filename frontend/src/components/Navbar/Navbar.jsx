@@ -52,7 +52,9 @@ const Navbar = ({ setShowLogin }) => {
       </ul>
       <div className="navbar-right">
         <img
-          onClick={() => (window.location.href = "http://localhost:5174/add")}
+          onClick={() =>
+            (window.location.href = "https://e-dhaba-admin.onrender.com/add")
+          }
           src={assets.grand_admin}
           alt=""
         />

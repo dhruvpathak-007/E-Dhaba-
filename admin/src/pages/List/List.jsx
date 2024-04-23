@@ -10,7 +10,6 @@ const List = ({ url }) => {
 
   const fetchList = async () => {
     const response = await axios.get(`${url}/api/food/list`);
-    // console.log(response.data);
 
     if (response.data.success) {
       setList(response.data.data);
@@ -20,7 +19,6 @@ const List = ({ url }) => {
   };
 
   const removeFood = async (foodId) => {
-    // console.log(foodId);
     const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
     await fetchList();
     if (response.data.success) {
@@ -51,9 +49,7 @@ const List = ({ url }) => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{item.price}</p>
-              <p onClick={() => removeFood(item._id)} className="cursor">
-                X
-              </p>
+              <p className="cursor">X</p>
             </div>
           );
         })}
@@ -66,3 +62,5 @@ List.propTypes = {
   url: PropTypes.string.isRequired,
 };
 export default List;
+
+// onClick={() => removeFood(item._id)}
